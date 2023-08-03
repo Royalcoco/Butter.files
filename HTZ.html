@@ -1,0 +1,279 @@
+<!DOCTYPE : 
+<html>
+<head>
+    <title>Formulario</title>
+</head>
+<hood.{% block extrahead %}
+    <style>
+        .errorlist {
+            color: red;
+        }
+    </style>
+{% endblock extrahead %} 
+<body>
+    <h1>Formulario</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
+```
+views.py
+```
+from django.shortcuts import render
+from .forms import FormularioContacto
+def contact(request):
+    if request.method == 'POST':
+        form = FormularioContacto(request.POST)
+        if form.is_valid():
+            form.save()
+    else:
+        form = FormularioContacto()
+    return render(request, 'contact.html', {'form': form})
+```
+forms.py
+```
+from django import forms
+from .models import Contacto
+class FormularioContacto(forms.ModelForm):
+    class Meta:
+        model = Contacto
+        fields = '__all__'
+```
+models.py
+```
+from django.db import models
+class Contacto(models.Model):
+    nombre = models.CharField(max_length=50)
+    correo = models.EmailField()
+    mensaje = models.TextField()
+    def __str__(self):
+        return self.nombre
+```
+urls.py
+```
+from django.urls import path
+from . import views
+urlpatterns = [
+    path('', views.contact, name='contact'),
+]
+```
+<monitor>
+```
+[08/Jul/2020 17:50:04] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:04] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:07] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:07] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:09] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:09] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:11] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:11] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:13] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:13] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:15] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:15] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:17] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:17] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:19] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:19] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:21] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:21] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:23] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:23] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:25] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:25] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:27] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:27] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:29] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:29] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:31] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:31] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:33] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:33] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:35] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:35] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:37] "GET /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:37] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
+<monitor>
+```
+[08/Jul/2020 17:50:39] "POST /contact/ HTTP/1.1" 200 1062
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+[08/Jul/2020 17:50:39] "GET /static/css/estilos.css HTTP/1.1" 304 0
+```
