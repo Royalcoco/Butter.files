@@ -967,4 +967,662 @@ urlpatterns = [
                     $check_monitor = mysqli_num_rows($query_run) > 0;
                     if ($check_monitor == true){
 
-                        
+                        foreach ($query_run as $row){
+                            ?>
+                            <tr>
+                            <td><?php echo $row['monitor_id']; ?></td>
+                            <td><?php echo $row['monitor_name']; ?></td>
+                            <td><?php echo $row['monitor_type']; ?></td>
+                            <td><?php echo $row['monitor_status']; ?></td>
+                            <td><?php echo $row['monitor_location']; ?></td>
+                            <td><?php echo $row['monitor_description']; ?></td>
+                            <td><?php echo $row['monitor_date']; ?></td>
+                            <td><?php echo $row['monitor_time']; ?></td>
+                            <td>
+                            <form action="monitor_edit.php" method="post">
+                            <input type="hidden" name="edit_id" value="<?php echo $row['monitor_id']; ?>">
+                            <button type="submit" name="edit_btn" class="btn btn-success">EDIT</button>
+                            </form>
+                            </td>
+                            </tr>
+                            <?php
+                        }
+                    }
+                    else{
+                        echo "No Record Found";
+                    }
+                    ?>
+                    </tbody>
+                    </table>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    <?php include 'footer.html';?>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+
+<https://from django.utils.translation import ugettext_lazy as _ "Power.access"
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm
+from django import forms
+from .models import Profile
+, Monitors
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitor
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+, Monitors
+
+class UserRegisterForm(UserCreationForm):
+    email = forms.EmailField()
+    class Meta:
+        model = User
+        fields = ['username'
+        , 'email'
+        , 'password1'
+        , 'password2'
+        ]
+        def clean_email(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self 
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                return email
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.email = self.cleaned_data['email']
+                if commit:
+                user.save()
+                return user
+                class UserUpdateForm(forms.ModelForm):
+                email = forms.EmailField()
+                class Meta:
+                model = User
+                fields = ['username'
+                , 'email'
+                ]
+                def clean_email(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'email'
+                , None
+                )
+                return email
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.email = self.cleaned_data['email']
+                if commit:
+                user.save()
+                return user
+                class ProfileUpdateForm(forms.ModelForm):
+                class Meta:
+                model = Profile
+                fields = ['image'
+                ]
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorUpdateForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:   
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorDeleteForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorDetailForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorListViewForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorCreateViewForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorUpdateViewForm(forms.ModelForm):
+                class Meta:
+                model = Monitor
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
+                def clean_name(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'name'
+                , None
+                )
+                return name
+                def clean_description(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'description'
+                , None
+                )
+                return description
+                def clean_price(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'price'
+                , None
+                )
+                return price
+                def clean_image(self) -> str | None:
+                <form.is_valid ; :/static/css/estilos.css get_digit(self
+                , 'image'
+                , None
+                )
+                
