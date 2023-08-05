@@ -1625,4 +1625,23 @@ class UserRegisterForm(UserCreationForm):
                 , 'image'
                 , None
                 )
-                
+                return image
+                def save(self
+                , commit: bool = True
+                ) -> django.contrib.auth.models.User:
+                user = super().save(commit=False)
+                user.name = self.cleaned_data['name']
+                user.description = self.cleaned_data['description']
+                user.price = self.cleaned_data['price']
+                user.image = self.cleaned_data['image']
+                if commit:
+                user.save()
+                return user
+                class MonitorDeleteViewForm(forms.ModelForm):
+                class Meta:
+                model = Monitor 
+                fields = ['name'
+                , 'description'
+                , 'price'
+                , 'image'
+                ]
